@@ -3,7 +3,7 @@ class User
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   ## Database authenticatable
   field :email,              type: String, default: ""
@@ -33,4 +33,13 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
+
+  ## Social Networks
+  field :name
+  field :omniauth_provider
+  field :omniauth_uid
+  field :omniauth_credentials
+  field :omniauth_url
+  field :omniauth_image
+  field :omniauth
 end
