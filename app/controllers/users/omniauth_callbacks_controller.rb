@@ -9,6 +9,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 protected
   def omniauth_signup_or_connect_or_signin provider
     auth_hash = request.env['omniauth.auth']
+    if provider == :kakao
+      auth_hash.info[:urls] = { "KAKAO": "http://kakao.com" } 
+      auth_hash.info[:email] = "#{auth_hash.uid}@kakao.com"
+    end
     user = User.where({ omniauth_uid: auth_hash.uid, email: auth_hash.info.email }).first
     if user.nil?
       user = User.create(

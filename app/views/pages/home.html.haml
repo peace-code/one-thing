@@ -7,11 +7,14 @@
           %button{ id: "nav-toggle", type: "button", class: "ui-navbar-toggle navbar-toggle", data: { toggle: "collapse", target: ".navbar-1" } }
         %div{ class: "collapse navbar-collapse navbar-1" }
           %ul{ class: "site-navigation nav pull-right" }
-            %li
-              -if user_signed_in?
+            -if user_signed_in?
+              %li
                 = link_to "#{current_user.name} 나가기", destroy_user_session_path, method: :delete
-              -else
+            -else
+              %li
                 = link_to '가입하기(페이스북)', user_omniauth_authorize_path(:facebook)
+              %li
+                = link_to '가입하기(카카오)', user_omniauth_authorize_path(:kakao)
     %div{ class: "v-center text-center" }
       %div{ class: "vc-content" }
         %h1 뭐라도 해야 되겠는데 뭘 해야 할지 모르겠을 때

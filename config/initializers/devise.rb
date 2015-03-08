@@ -234,6 +234,9 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
+  config.omniauth :kakao,
+    Rails.configuration.kakao['client_id'], { redirect_path: "/users/omniauth_callbacks" }
+
   config.omniauth :facebook,
     Rails.configuration.facebook['client_id'],
     Rails.configuration.facebook['client_secret'],
