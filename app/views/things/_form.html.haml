@@ -1,0 +1,14 @@
+= simple_form_for @thing do |f|
+  - if @thing.errors.any?
+    #errors
+      %p
+        = @thing.errors.count
+      %ul
+        - @thing.errors.full_messages.each do |m|
+          %li= msg
+  .panel-body
+    = f.input :title, input_html: { class: 'form-control' }
+    = f.input :subtitle, input_html: { class: 'form-control' }
+    = f.input :content, input_html: { class: 'form-control' }
+
+  = f.button :submit, class: "btn btn-primary"

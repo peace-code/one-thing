@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'haml', '~> 4.0.6'
 gem 'turbolinks', '~> 2.5.3'
 
+gem 'simple_form'
+
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
 

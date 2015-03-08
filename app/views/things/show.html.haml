@@ -1,0 +1,15 @@
+.container
+  #thing_info.row
+    .col-md-12
+      %h1= @thing.title
+      %p= @thing.subtitle
+      %p= @thing.content
+      %p
+        by 
+        = @thing.user.name
+  .row
+    .col-md-12
+      = link_to "back", root_path, class: "btn btn-default"
+      - if user_signed_in?
+        = link_to "edit", edit_thing_path, class: "btn btn-default"
+        = link_to "delete", thing_path, method: :delete, data: { confirm: "sure?" }, class: "btn btn-default"
