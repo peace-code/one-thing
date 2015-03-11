@@ -22,5 +22,11 @@ module OneThing
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.kakao = YAML.load_file("#{Rails.root.to_s}/config/credentials/kakao_credential.yml")[Rails.env]
+
+    config.facebook = YAML.load_file("#{Rails.root.to_s}/config/credentials/facebook_credential.yml")[Rails.env]
+
+    config.twitter = YAML.load_file("#{Rails.root.to_s}/config/credentials/twitter_credential.yml")[Rails.env]
   end
 end

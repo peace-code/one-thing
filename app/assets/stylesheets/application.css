@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+/*
+ *= require bootstrap_and_overrides
+ */
+
+body{
+  margin:0;
+  padding:0;
+    background:#FFF;
+    -webkit-font-smoothing: antialiased;
+}
+a:hover{text-decoration: none; cursor:pointer;}
+
+/* Globals type styling */
+ h1, h2, h3, h4, h5, h6, p, label, .btn, a{
+  font-family:Open Sans;
+}
+
+/* Site container width */
+.container{
+  max-width:970px;
+}

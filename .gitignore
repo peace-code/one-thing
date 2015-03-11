@@ -15,3 +15,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore credential key
+/config/credentials/*.yml
+
+# Ignore ruby version
+.ruby-version
