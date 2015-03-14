@@ -24,19 +24,17 @@ gem 'omniauth-twitter'
 gem 'koala'
 gem 'twitter'
 
+# view
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer', platforms: :ruby
-gem 'less-rails', '~> 2.6.0'
-gem 'twitter-bootstrap-rails', '~> 3.2.0'
-
+gem 'bootstrap-sass', '~> 3.3.3'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
-gem 'haml', '~> 4.0.6'
-gem 'turbolinks', '~> 2.5.3'
-
+gem 'haml-rails', '~> 0.8'
 gem 'simple_form'
+gem 'font-awesome-rails'
 
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
