@@ -1,4 +1,8 @@
 .page-container
+  / = flash.each do |t, m|
+  /   .alert{ class: "alert-#{t}" }
+  /     %button.close{ data: { dismiss: "alert" } } x
+  /     %strong= m
   #hero-bloc{class: "bloc hero bgc-2 bg-highway d-bloc"}
     %div{ class: "container bloc-sm hero-nav" }
       %nav{ class: "navbar row" }
@@ -15,6 +19,8 @@
                 = link_to '가입하기(페이스북)', user_omniauth_authorize_path(:facebook)
               %li
                 = link_to '가입하기(카카오)', user_omniauth_authorize_path(:kakao)
+              %li
+                = link_to '가입하기(트위터)', user_omniauth_authorize_path(:twitter)
     %div{ class: "v-center text-center" }
       %div{ class: "vc-content" }
         %h1 뭐라도 해야 되겠는데 뭘 해야 할지 모르겠을 때

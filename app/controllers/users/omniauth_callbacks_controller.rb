@@ -12,6 +12,8 @@ protected
     if provider == :kakao
       auth_hash.info[:urls] = { "KAKAO": "http://kakao.com" } 
       auth_hash.info[:email] = "#{auth_hash.uid}@kakao.com"
+    elsif provider == :twitter
+      auth_hash.info[:email] = "#{auth_hash.uid}@twitter.com"      
     end
     user = User.where({ omniauth_uid: auth_hash.uid, email: auth_hash.info.email }).first
     if user.nil?
