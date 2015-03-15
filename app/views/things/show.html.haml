@@ -3,7 +3,7 @@
     .col-md-12
       %h1= @thing.title
       %p= @thing.subtitle
-      %p= @thing.content
+      %div= @thing.content.html_safe
       %p
         by 
         = @thing.user.name

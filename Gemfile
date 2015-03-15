@@ -36,6 +36,10 @@ gem 'haml-rails', '~> 0.8'
 gem 'simple_form'
 gem 'font-awesome-rails'
 
+# Edit
+gem 'redactor-rails'
+gem 'mini_magick'
+
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
 

@@ -14,11 +14,13 @@ class ThingsController < ApplicationController
   end
 
   def create
-    unless user_signed_in? && current_user.things.empty?
-      redirect things_url
+    puts "create #{user_signed_in?}, #{current_user.things.empty?}"
+    unless user_signed_in? || current_user.things.empty?
+      redirect_to things_url
       return nil
     end
 
+    puts "build"
     @thing = current_user.things.build(thing_params)
     if @thing.save
       redirect_to @thing, notice: "create ok"

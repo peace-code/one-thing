@@ -1,4 +1,8 @@
 .page-container
+  / = flash.each do |t, m|
+  /   .alert{ class: "alert-#{t}" }
+  /     %button.close{ data: { dismiss: "alert" } } x
+  /     %strong= m
   #hero-bloc{class: "bloc hero bgc-2 bg-highway d-bloc"}
     %div{ class: "container bloc-sm hero-nav" }
       = render 'gnb'
