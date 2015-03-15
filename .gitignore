@@ -17,7 +17,7 @@
 /tmp
 
 # Ignore uploaded images by redactor
-/public/system/redactor_assets
+/public/system/
 
 # Ignore credential key
 /config/credentials/*.yml
