@@ -5,20 +5,7 @@
     #bloc-nav.d-mode
       #nav-bloc.bloc.l-bloc.bgc-2
         .container.bloc-sm
-          %nav.navbar.row
-            .navbar-header
-              %a.navbar-brand{:href => "index.html"} 1thing.kr
-              %button#nav-toggle.ui-navbar-toggle.navbar-toggle{"data-target" => ".navbar-1", "data-toggle" => "collapse", :type => "button"}
-                %span.sr-only Toggle navigation
-                %span.icon-bar
-                %span.icon-bar
-                %span.icon-bar
-            .collapse.navbar-collapse.navbar-1
-              %ul.site-navigation.nav
-                %li
-                  %a{:href => "index.html"} Home
-                %li
-                  %a{:href => "things.html"} things
+          = render 'gnb'
 
   / Navigation Bloc END
   / bloc-3
