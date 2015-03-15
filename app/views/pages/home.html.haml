@@ -5,22 +5,7 @@
   /     %strong= m
   #hero-bloc{class: "bloc hero bgc-2 bg-highway d-bloc"}
     %div{ class: "container bloc-sm hero-nav" }
-      %nav{ class: "navbar row" }
-        %div{ class: "navbar-header" }
-          %a{ class: "navbar-brand", href: "#" }1thing.kr
-          %button{ id: "nav-toggle", type: "button", class: "ui-navbar-toggle navbar-toggle", data: { toggle: "collapse", target: ".navbar-1" } }
-        %div{ class: "collapse navbar-collapse navbar-1" }
-          %ul{ class: "site-navigation nav pull-right" }
-            -if user_signed_in?
-              %li
-                = link_to "#{current_user.name} 나가기", destroy_user_session_path, method: :delete
-            -else
-              %li
-                = link_to '가입하기(페이스북)', user_omniauth_authorize_path(:facebook)
-              %li
-                = link_to '가입하기(카카오)', user_omniauth_authorize_path(:kakao)
-              %li
-                = link_to '가입하기(트위터)', user_omniauth_authorize_path(:twitter)
+      = render 'gnb'
     %div{ class: "v-center text-center" }
       %div{ class: "vc-content" }
         %h1 뭐라도 해야 되겠는데 뭘 해야 할지 모르겠을 때
@@ -43,7 +28,7 @@
   #bloc-3{ class: "bloc  l-bloc" }
     %div{ class: "container bloc-sm" }
       .row
-        - 4.times do 
+        - 4.times do
           .col-sm-3
             %img{ src: "assets/placeholder-image.png",  class: "img-responsive", alt: '' }
             %h3{ class: "mg-md" } Title goes here
@@ -51,44 +36,8 @@
   #bloc-4{ class: "bloc  l-bloc" }
     %div{ class: "container bloc-sm" }
       .row
-        - 4.times do 
+        - 4.times do
           .col-sm-3
             %img{ src: "assets/placeholder-image.png",  class: "img-responsive", alt: '' }
             %h3{ class: "mg-md" } Title goes here
             %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-  #bloc-5{ class: "bloc l-bloc  b-divider" }
-    %div{ class: "container bloc-md" }
-      .row
-        .col-sm-10
-          %h3{ class: "mg-md" } Enter your e-mail to get updates
-        .col-sm-2
-          %a{ href: "#", class: "btn  btn-d  btn-lg" } Subscribe now
-  #bloc-6{ class: "bloc  d-bloc" }
-    %div{ class: "container bloc-lg" }
-      .row
-        .col-sm-6
-          %img{ src: "assets/highway.jpg", class: "img-responsive", alt: '' }
-        .col-sm-6
-          %h2{ class: "mg-lg" } 작게 함께 시작해 보아요
-          %h3{ class: "mg-sm" } 1thing.kr은
-          %p{ class: "mg-lg" } 1thing.kr은 도움을 나누고 싶지만 무엇부터 시작해야 할지 막막해 하는 마음에서 만든 서비스입니다. 마음만으로는 뭔가를 시작한다는건 늘 막연하고 어렵습니다. 혼자가 아니라면, 누군가가 작은 일을 함께 해 보자고 먼저 제안하고, 그 제안에 응답하는 방식이라면 더 많은 우리가 작은 움직임을 시작할 수 있지 않을까요. 그런 작은 움직임들이 쌓이면 더 큰 변화도 일어나지 않을까 욕심내어 볼 수도 있지 않을까요. 1thing.kr은 그런 마음으로 시작합니다.
-          %a{ href: "#", class: "btn  btn-d  btn-lg" } 만드는 사람들에게 의견 주기
-  #bloc-7{ class: "bloc  d-bloc" }
-    %div{ class: "container bloc-lg" }
-      .row
-        .col-sm-3
-          %h3 About
-          %a{ href: "#", class: "a-btn a-block" } The team
-          %a{ href: "#", class: "a-btn a-block" } Contact us
-        .col-sm-3
-          %h3 Get the App
-          %a{ href: "#", class: "a-btn a-block" } iPhone
-          %a{ href: "#", class: "a-btn a-block" } Android
-        .col-sm-3
-          %h3 Follow us
-          %a{ href: "#", class: "a-btn a-block" } Twitter
-          %a{ href: "#", class: "a-btn a-block" } Facebook
-        .col-sm-3
-          %h3 Company
-          %a{ href: "#", class: "a-btn a-block" } Term of use
-          %a{ href: "#", class: "a-btn a-block" } Privacy

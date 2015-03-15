@@ -1,0 +1,16 @@
+%nav.navbar.row
+  .navbar-header
+    %a.navbar-brand{:href => "index.html"} 1thing.kr
+    %button#nav-toggle.ui-navbar-toggle.navbar-toggle{"data-target" => ".navbar-1", "data-toggle" => "collapse", :type => "button"}
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+  .collapse.navbar-collapse.navbar-1
+    %ul.site-navigation.nav
+      -if user_signed_in?
+        %li= link_to "#{current_user.name} 나가기", destroy_user_session_path, method: :delete
+      -else
+        %li= link_to '가입하기(페이스북)', user_omniauth_authorize_path(:facebook)
+        %li= link_to '가입하기(카카오)', user_omniauth_authorize_path(:kakao)
+        %li= link_to '가입하기(트위터)', user_omniauth_authorize_path(:twitter)

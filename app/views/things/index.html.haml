@@ -1,9 +1,75 @@
-.container
-  .page-header
-    %h1 Things List
-  - @things.each do |thing|
-    .row
-      .col-md-2
-        = link_to thing.seq, thing
-      .col-md-4
-        %p= thing.title
+/ Main container
+.page-container
+  / Navigation Bloc
+  #b-nav.bloc-container
+    #bloc-nav.d-mode
+      #nav-bloc.bloc.l-bloc.bgc-2
+        .container.bloc-sm
+          = render 'gnb'
+
+  / Navigation Bloc END
+  / bloc-3
+  #bloc-headline.bloc.d-bloc
+    .container.bloc-sm
+      .row
+        .col-sm-12
+          %span.empty-column.thin
+
+  / bloc-3 END
+  / Footer - bloc-4
+  #bloc-4.bloc.l-bloc
+    .container.bloc-sm
+      .row
+        .col-sm-3
+          = image_tag 'placeholder-image.png', class: 'img-responsive'
+          %h3.mg-md
+            Title goes here
+          %p
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+        .col-sm-3
+          = image_tag 'placeholder-image.png', class: 'img-responsive'
+          %h3.mg-md
+            Title goes here
+          %p
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+        .col-sm-3
+          = image_tag 'placeholder-image.png', class: 'img-responsive'
+          %h3.mg-md
+            Title goes here
+          %p
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+        .col-sm-3
+          = image_tag 'placeholder-image.png', class: 'img-responsive'
+          %h3.mg-md
+            Title goes here
+          %p
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+  / Footer - bloc-4 END
+  / Footer - bloc-5
+  #bloc-5.bloc.l-bloc
+    .container.bloc-sm
+      .row
+        .col-sm-3
+          = image_tag 'placeholder-image.png', class: 'img-responsive'
+          %h3.mg-md
+            Title goes here
+          %p
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+        .col-sm-3
+          = image_tag 'placeholder-image.png', class: 'img-responsive'
+          %h3.mg-md
+            Title goes here
+          %p
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+        .col-sm-3
+          = image_tag 'placeholder-image.png', class: 'img-responsive'
+          %h3.mg-md
+            Title goes here
+          %p
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+        .col-sm-3
+          = image_tag 'placeholder-image.png', class: 'img-responsive'
+          %h3.mg-md
+            Title goes here
+          %p
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.

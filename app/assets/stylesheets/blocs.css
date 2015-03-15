@@ -1,30 +1,57 @@
+/*-----------------------------------------------------------------------------------*/
 /*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+/*      Built with Blocs
+/*-----------------------------------------------------------------------------------*/
+body{
+  margin:0;
+  padding:0;
+  background:#FFF;
+  overflow-x:hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a:hover{text-decoration: none; cursor:pointer;}
+
+
+/* Globals type styling */
+ h1, h2, h3, h4, h5, h6, p, label, .btn, a{
+  font-family:Open Sans;
+}
+
+/* Site container width */
+
+.container{
+  max-width:970px;
+}
 
 /* Blocs */
 .bloc{
   width:100%;
+  clear:both;
   background: 50% 50% no-repeat;
+  padding: 0 50px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
+
 /* Bloc sizes */
+
 .bloc-lg{
-  padding:100px 0;
+  padding:100px 50px;
 }
 .bloc-md{
-  padding:50px 0;
+  padding:50px;
 }
 .bloc-sm{
-  padding:20px 0;
+  padding:20px 50px;
 }
 
+
 /* Bloc - Dark theme */
+
 .d-bloc{
   color:rgba(255,255,255,.7);
 }
@@ -54,7 +81,9 @@
   border-color:rgba(255,255,255,1);
 }
 
+
 /* Bloc - Light theme */
+
 .l-bloc{
   color:rgba(0,0,0,.5);
 }
@@ -83,18 +112,20 @@
   color:rgba(0,0,0,.7);
   border-color:rgba(0,0,0,.3);
 }
-
 /* Bloc Dividers */
+
 .b-divider{
   border-top:1px solid rgba(0,0,0,.1);
   border-bottom:1px solid rgba(0,0,0,.1);
 }
 
+
 /* Custom bloc styling */
-#hero-bloc,#nav-bloc,#bloc-2,#bloc-3,#bloc-4,#bloc-5{
+
+#hero-bloc,#nav-bloc,#bloc-2,#bloc-4,#bloc-5,#bloc-6{
   background-color:#ffffff;
 }
-#bloc-6{
+#bloc-headline,#bloc-6{
   background-color:#444444;
 }
 #bloc-7{
@@ -108,11 +139,13 @@
 }
 
 /* Bloc image backgrounds */
+
 .bg-highway{
   background-image:url("highway.jpg");
 }
 
 /* NavBar */
+
 .navbar{
   margin-bottom: 0;
 }
@@ -146,7 +179,7 @@
   background:transparent;
 }
 .navbar-toggle{
-  margin: 10px 0 0 0;
+  margin: 10px 10px 0 0;
   border: 0px;
 }
 .navbar-toggle:hover{
@@ -156,8 +189,8 @@
   background-color: rgba(0,0,0,.5);
   width: 26px;
 }
+ /* Inverted navbar */
 
-/* Inverted navbar */
 .nav-invert .navbar .nav{
   float:left;
 }
@@ -177,8 +210,8 @@
   right:0;
 }
 }
-
 /* Hero bloc */
+
 .hero{
   padding-top:0;
 }
@@ -221,6 +254,7 @@
 }
 
 /* Bric adjustment margins */
+
 .mg-sm{
   margin-top:10px;
   margin-bottom:5px;
@@ -235,6 +269,7 @@
 }
 
 /* Buttons */
+
 .btn{
   margin: 0 5px 5px 0;
 }
@@ -272,23 +307,49 @@
   text-align: left;
 }
 
-/*iFrame*/
+
+
+
+
+
+
+
+/* Empty space fillers - Used on empty blocs to fill them out */
+
+.empty-column,.empty-column.thin{
+  width:100%;
+  height:350px;
+  display:inline-block;
+}
+.empty-column{
+  height:350px;
+}
+.empty-column.thin{
+  height:150px;
+}
+/* iFrame */
+
 iframe{
   border:0;
 }
 
+
+
 /* Mobile adjustments */
+
 @media (max-width: 767px)
 {
     .page-container{
         overflow-x: hidden;
     }
     h1,h2,h3,h4,h5,h6,p{
-        padding-left:5px!important; 
-        padding-right:5px!important; 
+        padding-left:10px!important;
+        padding-right:10px!important;
     }
     .bloc{
         text-align: center;
+        padding-left: 0;
+        padding-right: 0;
         -webkit-background-size: auto 200%;
         -moz-background-size: auto 200%;
         -o-background-size: auto 200%;
@@ -311,7 +372,7 @@ iframe{
      transform:none;
      -webkit-transform:none;
      -ms-transform:none;
-    }  
+    }
     .nav > li{
         margin-top: 0;
         border-bottom:1px solid rgba(0,0,0,.1);
@@ -331,25 +392,37 @@ iframe{
     .navbar-brand img{
         max-height: 40px;
         width:auto;
-        margin: -10px 5px 0 0;    
+        margin: -10px 10px 0 0;
     }
     .nav-invert .navbar-header{
         float: none;
         width:100%;
     }
     .nav-invert .navbar-toggle{
-        float:left; 
+        float:left;
     }
     .btn.pull-left, .btn.pull-right{
-       float:none!important; 
+       float:none!important;
+    }
+    .bloc-group .bloc{
+         display:block;
+         width:100%;
+     }
+    .bloc-tile-2 .container, .bloc-tile-3 .container, .bloc-tile-4 .container{
+     padding-left: 10px;
+     padding-right: 10px;
     }
     .bloc-xl,.bloc-lg{
         padding: 40px 0;
+    }
+    .bloc-sm,.bloc-md{
+        padding-left: 0;
+        padding-right: 0;
     }
     .a-block{
         text-align: center;
     }
     .btn-dwn{
-       display:none; 
+       display:none;
     }
 }
