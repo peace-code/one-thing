@@ -141,7 +141,7 @@ a:hover{text-decoration: none; cursor:pointer;}
 /* Bloc image backgrounds */
 
 .bg-highway{
-  background-image:url("/assets/highway.jpg");
+  background-image:url(asset_path("highway.jpg"));
 }
 
 /* NavBar */

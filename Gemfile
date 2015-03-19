@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-
+ruby '2.2.0'
 gem 'rails', '4.2.0'
 
 # Database
 gem 'mongoid'
-gem 'sqlite3'
+gem 'sqlite3', group: :development
 
 # Upload
 gem 'rmagick'
@@ -39,6 +39,9 @@ gem 'font-awesome-rails'
 # Edit
 gem 'redactor-rails'
 gem 'mini_magick'
+
+# Heroku
+gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
