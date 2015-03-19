@@ -5,6 +5,7 @@ gem 'rails', '4.2.0'
 # Database
 gem 'mongoid'
 gem 'sqlite3', group: :development
+gem 'pg', group: :deployment
 
 # Upload
 gem 'rmagick'
