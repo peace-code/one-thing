@@ -101,10 +101,10 @@ test:
         retry_interval: 0
 production:
   sessions:
-  default:
-  uri: <%= ENV['MONGOLAB'] %>
-  # database: goodclinic_production
-  # hosts:
-  # - localhost:27017
-  options:
-  #consistency: :strong
+    default:
+      uri: <%= ENV['MONGOLAB'] %>
+      # database: goodclinic_production
+      # hosts:
+      #   - localhost:27017
+      options:
+        #consistency: :strong
