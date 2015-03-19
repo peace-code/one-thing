@@ -23,10 +23,24 @@ module OneThing
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.kakao = YAML.load_file("#{Rails.root.to_s}/config/credentials/kakao_credential.yml")[Rails.env]
 
-    config.facebook = YAML.load_file("#{Rails.root.to_s}/config/credentials/facebook_credential.yml")[Rails.env]
+    if File.exists? "#{Rails.root.to_s}/config/credentials/kakao_credential.yml"
+      config.kakao = YAML.load_file("#{Rails.root.to_s}/config/credentials/kakao_credential.yml")[Rails.env]
+    else
+      config.kakao = { "client_id" => ENV[KK_API_ID], "admin_id" => ENV[KK_API_ADMIN_ID] }
+    end
 
-    config.twitter = YAML.load_file("#{Rails.root.to_s}/config/credentials/twitter_credential.yml")[Rails.env]
+    if File.exists? "#{Rails.root.to_s}/config/credentials/facebook_credential.yml"
+      config.facebook = YAML.load_file("#{Rails.root.to_s}/config/credentials/facebook_credential.yml")[Rails.env]
+    else
+      config.facebook = { "client_id" => ENV[FB_API_ID], "client_secret" => ENV[FB_API_SECRET] }
+    end
+
+    if File.exists? "#{Rails.root.to_s}/config/credentials/twitter_credential.yml"
+      config.twitter = YAML.load_file("#{Rails.root.to_s}/config/credentials/twitter_credential.yml")[Rails.env]
+    else
+      config.twitter = { "client_id" => ENV[TW_API_ID], "client_secret" => ENV[TW_API_SECRET] }
+    end
+    
   end
 end
