@@ -7,6 +7,8 @@ class ThingsController < ApplicationController
   end
 
   def show
+    @thing = Thing.find(params[:id])
+    @thing.comments.build
   end
 
   def seq

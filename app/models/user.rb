@@ -1,7 +1,10 @@
 class User
   include Mongoid::Document
 
+  # Association
   has_many :things
+  has_many :comments
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

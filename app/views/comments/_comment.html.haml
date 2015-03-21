@@ -1,0 +1,15 @@
+- if comment.new_record?
+  - if user_signed_in?
+    .media
+      = render 'comments/form', comment: comment
+- else
+  .media
+    %a.pull-left{ href: "#" }
+      = image_tag comment.user.omniauth_image, class: 'media-object', width: 64
+    .media-body
+      %h5.media-heading
+        = link_to raw("<i class='icon-#{comment.user.omniauth_provider}'></i> #{comment.user.name}"), comment.user
+      = simple_format comment.content
+      - if user_signed_in? && current_user == comment.user
+        %p
+          = link_to '삭제', [comment.commentable, comment], method: :delete,  data: { confirm: '지우시겠습니까?' }

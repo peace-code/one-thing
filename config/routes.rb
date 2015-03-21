@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   mount RedactorRails::Engine => '/redactor_rails'
-  get 'users/show'
 
-  get 'users/me'
+  resources :users do
+    collection { get :me }
+  end
 
   devise_for :users, :controllers => { omniauth_callbacks: "users/omniauth_callbacks" }
 
-  resources :things 
+  resources :things do
+    resources :comments
+  end
 
   get 'things/seq/:seq', to: 'things#seq'
 
