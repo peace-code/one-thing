@@ -9,6 +9,10 @@ class ThingsController < ApplicationController
   def show
   end
 
+  def seq
+    @thing = Thing.where(seq: params[:seq]).first
+  end
+
   def new
     @thing = current_user.things.build()
   end

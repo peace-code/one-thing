@@ -18,6 +18,7 @@
 
 # Ignore uploaded images by redactor
 /public/system/
+/public/uploads/
 
 # Ignore credential key
 /config/credentials/*.yml
