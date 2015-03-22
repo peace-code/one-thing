@@ -140,8 +140,8 @@ a:hover{text-decoration: none; cursor:pointer;}
 
 /* Bloc image backgrounds */
 
-.bg-highway{
-  background-image:url(asset_path("highway.jpg"));
+.bg-paper-ship {
+  background-image:url(asset_path("paper-ship.jpg"));
 }
 
 /* NavBar */
