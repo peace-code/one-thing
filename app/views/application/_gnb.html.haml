@@ -8,6 +8,7 @@
       %span.icon-bar
   .collapse.navbar-collapse.navbar-1
     %ul.site-navigation.nav
+      %li= link_to "제안보기", things_path
       %li= link_to "제안하기", new_thing_path
       - if user_signed_in?
         %li= link_to "#{current_user.name} 로그아웃", destroy_user_session_path, method: :delete

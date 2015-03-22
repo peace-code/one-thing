@@ -137,6 +137,9 @@ a:hover{text-decoration: none; cursor:pointer;}
 #hero-bloc h3{
   font-size:30px;
 }
+#b-nav {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
 
 /* Bloc image backgrounds */
 
