@@ -1,0 +1,6 @@
+ko:
+  mongoid:
+    attributes:
+      thing:
+        title: 제안명
+        content: 내용
