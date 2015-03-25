@@ -1,4 +1,5 @@
-= simple_form_for [comment.commentable, comment] do |f|
-  = f.input :content, label: '댓글', as: :text, input_html: { class: 'span7', rows: 3 }
-  %br/
-  = f.button :submit, '등록', class: 'btn btn-primary'
+= form_for [comment.commentable, comment] do |f|
+  .form-group
+    = f.text_area :content, class: 'form-control'
+  .form-group
+    = f.submit '댓글 남기기', class: 'btn btn-primary'

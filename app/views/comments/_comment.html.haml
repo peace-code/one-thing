@@ -1,7 +1,6 @@
 - if comment.new_record?
   - if user_signed_in?
-    .media
-      = render 'comments/form', comment: comment
+    = render 'comments/form', comment: comment
 - else
   .media
     %a.pull-left{ href: "#" }

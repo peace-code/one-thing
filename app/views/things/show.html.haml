@@ -1,20 +1,16 @@
-.container
-  #thing_info.row
-    .col-md-12
-      %h1= @thing.title
-      %p= "##{@thing.seq}"
-      %p= @thing.subtitle
-      %div= @thing.content.html_safe
-      %p
-        by 
-        = @thing.user.name
-  .row
-    .col-md-12
-      = link_to "home", root_path, class: "btn btn-default"
-      = link_to "list", things_path, class: "btn btn-default"
-      - if user_signed_in?
-        = link_to "edit", edit_thing_path, class: "btn btn-default"
-        = link_to "delete", thing_path, method: :delete, data: { confirm: "sure?" }, class: "btn btn-default"
-  .row
-    .col-md-12
+#thing-show.bloc.l-bloc
+  .container.bloc-sm
+    .page-header
+      %h2
+        = @thing.title
+        %small= @thing.user.name
+        - if user_signed_in? && @thing.user == current_user
+          .pull-right
+            = link_to "edit", edit_thing_path, class: "btn btn-d"
+            = link_to "delete", thing_path, method: :delete, data: { confirm: "sure?" }, class: "btn btn-d"
+
+    .thing-show__content= @thing.content.html_safe
+
+    %hr
+    .comments
       = render @thing.comments
