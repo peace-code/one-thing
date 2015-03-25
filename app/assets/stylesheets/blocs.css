@@ -122,10 +122,10 @@ a:hover{text-decoration: none; cursor:pointer;}
 
 /* Custom bloc styling */
 
-#hero-bloc,#nav-bloc,#bloc-2,#bloc-4,#bloc-5,#bloc-6{
+#hero-bloc,#nav-bloc,#bloc-2,#bloc-things,#bloc-5,#bloc-footer{
   background-color:#ffffff;
 }
-#bloc-headline,#bloc-6{
+#bloc-headline,#bloc-footer{
   background-color:#444444;
 }
 #bloc-7{
