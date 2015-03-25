@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'things/seq/:seq', to: 'things#seq'
 
   get 'pages/home'
+  get 'pages/banner'
 
   root to: 'pages#home'
 end

@@ -1,0 +1,13 @@
+%h2
+  4월의 이야기를 전하는 배너를 달아보세요.
+%div
+  아래 코드를 관리하시는 블로그나 사이트의 제일 아래에 붙여주세요. ( &lt;/body&gt;태그 바로  ) 
+%h3 코드
+%pre.code
+  = preserve do
+    :escaped
+      <script type="text/javascript" src="//1thing.kr/banner/1thingbar.js">
+      </script>
+      <script type="text/javascript">
+        new OneThingBar();
+      </script>
