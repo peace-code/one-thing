@@ -1,0 +1,26 @@
+#bloc-signin.bloc.l-bloc
+  .container.bloc-md
+    .page-header
+      %h2 로그인
+
+    .row
+      .col-md-6
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .form-group
+            = f.label :email, '이메일'
+            = f.email_field :email, autofocus: true, class: 'form-control'
+          .form-group
+            = f.label :password, '비밀번호'
+            = f.password_field :password, autocomplete: "off", class: 'form-control'
+          .form-group
+            = f.submit "로그인", class: 'btn btn-primary btn-lg'
+            .pull-right
+              = link_to new_registration_path(resource_name) do
+                %i.fa.fa-user
+                회원 가입
+              - if devise_mapping.recoverable?
+                = link_to new_password_path(resource_name) do
+                  %i.fa.fa-lock
+                  비밀번호찾기
+      .col-md-6
+        = render "devise/shared/links"
