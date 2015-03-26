@@ -9,7 +9,10 @@
           = devise_error_messages!
           .form-group
             = f.label :email, '이메일'
-            = f.email_field :email, autofocus: true, class: 'form-control'
+            = f.email_field :email, autofocus: true, required: true, class: 'form-control'
+          .form-group
+            = f.label :name, '이름'
+            = f.text_field :email, required: true, class: 'form-control'
           .form-group
             = f.label :password, '비밀번호'
             - if @validatable

@@ -48,4 +48,7 @@ class User
   field :omniauth_url
   field :omniauth_image
   field :omniauth
+
+  # validations
+  validates :name, presence: true
 end

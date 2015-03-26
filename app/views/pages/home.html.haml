@@ -1,17 +1,14 @@
 .page-container
-  / = flash.each do |t, m|
-  /   .alert{ class: "alert-#{t}" }
-  /     %button.close{ data: { dismiss: "alert" } } x
-  /     %strong= m
-  #bloc-2{ class: "bloc l-bloc " }
-    %div{ class: "container bloc-lg" }
-      .row
-        .col-sm-6
-          = link_to image_tag(asset_path('placeholder-image.png'), class: 'img-responsive'), thing_path(@thing)
-        .col-sm-6
-          %h2{ class: "mg-lg" }= @thing.title
-          %p{ class: "mg-lg" }= strip_tags @thing.content
-          = link_to '동참하기', @thing, class: 'btn btn-d btn-lg'
+  - if @thing.present?
+    #bloc-2{ class: "bloc l-bloc " }
+      %div{ class: "container bloc-lg" }
+        .row
+          .col-sm-6
+            = link_to image_tag(asset_path('placeholder-image.png'), class: 'img-responsive'), thing_path(@thing)
+          .col-sm-6
+            %h2{ class: "mg-lg" }= @thing.title
+            %p{ class: "mg-lg" }= strip_tags @thing.content
+            = link_to '동참하기', @thing, class: 'btn btn-d btn-lg'
 
   #bloc-things.bloc.l-bloc
     .container.bloc-sm
