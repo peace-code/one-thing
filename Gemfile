@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'haml-rails', '~> 0.8'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem 'rails-i18n'
 
 # Edit
 gem 'redactor-rails'

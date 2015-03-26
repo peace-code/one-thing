@@ -1,9 +1,11 @@
 class Thing
   include Mongoid::Document
+  include Mongoid::Timestamps
 
   # Association
   belongs_to :user
   has_many :comments, as: :commentable
+  has_many :deeds
 
   # Fields
   field :seq, type: Integer
@@ -16,7 +18,7 @@ class Thing
 
   # Callbacks
   before_create :assign_id
-  
+
 protected
 
   def assign_id

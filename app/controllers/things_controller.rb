@@ -1,5 +1,5 @@
 class ThingsController < ApplicationController
-  before_action :find_thing, only: [:show, :edit, :update, :destory]
+  before_action :find_thing, only: [:show, :edit, :update, :destory, :new_deed]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -50,9 +50,14 @@ class ThingsController < ApplicationController
   def destory
   end
 
+  def new_deed
+    @thing.deeds.create(user: current_user)
+    redirect_to @thing, notice: 'create deed'
+  end
+
 private
 
-  def thing_params 
+  def thing_params
     params.require(:thing).permit(:seq, :title, :subtitle, :content)
   end
 

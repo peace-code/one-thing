@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :things do
     resources :comments
+    post 'new_deed', on: :member
   end
 
   get 'things/seq/:seq', to: 'things#seq'
