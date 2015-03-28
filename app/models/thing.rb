@@ -19,6 +19,10 @@ class Thing
   # Callbacks
   before_create :assign_id
 
+  def featured_image
+    /img src=\"(?<url>.*?)\"/.match(content)['url']
+  end
+
 protected
 
   def assign_id

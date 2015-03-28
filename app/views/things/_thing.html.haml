@@ -1,4 +1,4 @@
 .col-sm-3
-  = link_to image_tag(asset_path('placeholder-image.png'), class: 'img-responsive'), thing_path(thing)
+  = link_to image_tag(featured_image(thing), class: 'img-responsive'), thing_path(thing)
   %h3.mg-md= link_to(thing.title, thing_path(thing))
   %p= strip_tags thing.content

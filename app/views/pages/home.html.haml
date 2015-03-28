@@ -4,7 +4,7 @@
       %div{ class: "container bloc-lg" }
         .row
           .col-sm-6
-            = link_to image_tag(asset_path('placeholder-image.png'), class: 'img-responsive'), thing_path(@thing)
+            = link_to image_tag(featured_image(@thing), class: 'img-responsive'), thing_path(@thing)
           .col-sm-6
             %h2{ class: "mg-lg" }= @thing.title
             %p{ class: "mg-lg" }= strip_tags @thing.content
