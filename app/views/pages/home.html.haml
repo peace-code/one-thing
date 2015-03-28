@@ -10,7 +10,7 @@
             - if @thing.deeds.present?
               %h4{ class: "mg-md" } #{@thing.deeds.count}명이 함께 합니다
             %p{ class: "mg-lg" }= strip_tags @thing.content
-            = link_to '동참하기', @thing, class: 'btn btn-d btn-lg'
+            = link_to '제안 보기', @thing, class: 'btn btn-d btn-lg'
 
   #bloc-things.bloc.l-bloc
     .container.bloc-sm
