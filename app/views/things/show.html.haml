@@ -22,8 +22,7 @@
         - if deed.present?
           = "#{current_user.name}님은 참여를 약속한 #{@thing.deeds.count}분 중에 한 분입니다"
         - else
-          = link_to '동참합니다', new_deed_thing_path(@thing), method: :post, class: 'btn btn-xl btn-d'
-
+          = link_to '함께 하겠습니다', new_deed_thing_path(@thing), method: :post, class: 'btn btn-xl btn-d'
 
     %hr
     .comments

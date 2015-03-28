@@ -16,6 +16,9 @@ class Thing
   # Validation
   validates :title, :content, presence: true
 
+  # scopes
+  default_scope -> { desc(:created_at) }
+
   # Callbacks
   before_create :assign_id
 
