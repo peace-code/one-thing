@@ -23,7 +23,8 @@ class Thing
   before_create :assign_id
 
   def featured_image
-    /img src=\"(?<url>.*?)\"/.match(content)['url']
+    m = /img src=\"(?<url>.*?)\"/.match(content)
+    m.nil? ? 'helpus.jpg' : m['url']
   end
 
 protected
