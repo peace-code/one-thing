@@ -11,6 +11,25 @@
   }
 }
 
+#bloc-thing-suggest {
+  h2.bloc-title {
+    background-image: image-url('things/title-suggest.png');
+    width: 286px;
+    height: 30px;
+    margin: 30px auto;
+    overflow: hidden;
+    text-indent: -9999px;
+  }
+  a.btn-thing-suggest {
+    background-image: image-url('things/btn-suggest.png');
+    display: block;
+    width: 435px;
+    height: 94px;
+    margin: 0 auto;
+    text-indent: -9999px;
+  }
+}
+
 .thing-grid-box {
   background-color: #fff;
   min-height: 300px;
