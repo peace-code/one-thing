@@ -12,6 +12,8 @@
 }
 
 #bloc-thing-suggest {
+  padding-left: 2em;
+  padding-right: 2em;
   h2.bloc-title {
     background-image: image-url('things/title-suggest.png');
     width: 286px;
@@ -27,6 +29,12 @@
     height: 94px;
     margin: 0 auto;
     text-indent: -9999px;
+    max-width: 100%;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
@@ -44,7 +52,11 @@
 .thing-grid-box {
   background-color: #fff;
   min-height: 300px;
-  .thing__thumb {}
+  .thing__thumb {
+    img {
+      width: 100%;
+    }
+  }
   .thing__body {
     padding: 1em;
   }

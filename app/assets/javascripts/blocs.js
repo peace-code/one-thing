@@ -1,7 +1,7 @@
 // Startup Scripts
 $(document).ready(function()
 {
-  $('.hero').css('height', ($(window).height() - $('header').outerHeight()) + 'px'); // Set hero to fill page height
+  // $('.hero').css('height', ($(window).height() - $('header').outerHeight()) + 'px'); // Set hero to fill page height
 
   $('#scroll-hero').click(function()
   {
@@ -9,11 +9,11 @@ $(document).ready(function()
   });
 });
 
-// Window resize 
+// Window resize
 $(window).resize(function()
 {
-  $('.hero').css('height', ($(window).height() - $('header').outerHeight()) + 'px'); // Refresh hero height   
-}); 
+  // $('.hero').css('height', ($(window).height() - $('header').outerHeight()) + 'px'); // Refresh hero height
+});
 
 // Scroll to target
 function scrollToTarget(D)
