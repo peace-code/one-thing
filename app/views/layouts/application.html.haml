@@ -12,6 +12,7 @@
 %body
 
   .page-container
+    = render partial: "shared/flash_messages", flash: flash
     - if current_page? root_path
       = render 'home_header'
     - else
