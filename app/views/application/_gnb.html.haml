@@ -1,6 +1,7 @@
 %nav.navbar.row
   .navbar-header
-    %a.navbar-brand{:href => "/"} 1thing.kr
+    %a.navbar-brand{:href => "/"}
+      = image_tag 'logo.png', alt: '1thing.kr'
     %button#nav-toggle.ui-navbar-toggle.navbar-toggle{"data-target" => ".navbar-1", "data-toggle" => "collapse", :type => "button"}
       %span.sr-only Toggle navigation
       %span.icon-bar
@@ -8,8 +9,8 @@
       %span.icon-bar
   .collapse.navbar-collapse.navbar-1
     %ul.site-navigation.nav
-      %li= link_to "제안보기", things_path
-      %li= link_to "제안하기", new_thing_path
+      %li= link_to "해볼래요?", things_path
+      %li= link_to "이건 어때요?", new_thing_path
       - if user_signed_in?
         %li= link_to "#{current_user.name} 로그아웃", destroy_user_session_path, method: :delete
       - else

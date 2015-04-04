@@ -1,20 +1,8 @@
 .page-container
-  - if @thing.present?
-    #bloc-2{ class: "bloc l-bloc " }
-      %div{ class: "container bloc-lg" }
-        .row
-          .col-sm-6
-            = link_to image_tag(featured_image(@thing), class: 'img-responsive'), thing_path(@thing)
-          .col-sm-6
-            %h2{ class: "mg-lg" }= @thing.title
-            - if @thing.deeds.present?
-              %h4{ class: "mg-md" } #{@thing.deeds.count}명이 함께 합니다
-            %p{ class: "mg-lg" }= strip_tags @thing.content
-            = link_to '제안 보기', @thing, class: 'btn btn-d btn-lg'
-
   #bloc-things.bloc.l-bloc
-    .container.bloc-sm
-      - @things.in_groups_of(4, false).each_with_index do |row|
+    .container.bloc-md
+      %h2.bloc-title 작은 일 하나, 해볼래요?
+      - @things.in_groups_of(3, false).each_with_index do |row|
         .row
           - row.each do |thing|
             = render thing

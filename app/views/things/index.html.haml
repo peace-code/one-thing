@@ -1,13 +1,7 @@
 #bloc-things.bloc.l-bloc
-  .container.bloc-sm
-    .page-header
-      %h2
-        전체
-        %strong
-          #{Thing.count}
-        개의 제안들
-
-    - @things.in_groups_of(4, false).each_with_index do |row|
+  .container.bloc-md
+    %h2.bloc-title 작은 일 하나, 해볼래요?
+    - @things.in_groups_of(3, false).each_with_index do |row|
       .row
         - row.each do |thing|
           = render thing

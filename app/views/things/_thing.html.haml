@@ -1,7 +1,8 @@
-.col-sm-3
+.col-sm-4
   .thing-grid-box
-    = link_to image_tag(featured_image(thing), class: 'img-responsive'), thing_path(thing)
-    %h3.mg-md= link_to(thing.title, thing_path(thing))
-    - if thing.deeds.present?
-      %h5.mg-sm #{thing.deeds.count}명이 함께 합니다
-    %p= strip_tags thing.content
+    .thing__thumb
+      = link_to image_tag(featured_image(thing), class: 'img-responsive'), thing_path(thing)
+    .thing__body
+      %h3.mg-md= link_to(thing.title, thing_path(thing))
+      - if thing.deeds.present?
+        %h5.mg-sm #{thing.deeds.count}명이 함께 합니다

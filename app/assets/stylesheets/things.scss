@@ -1,0 +1,29 @@
+#bloc-things {
+  background-color: #fbec96;
+
+  h2.bloc-title {
+    background-image: image-url('things/title.png');
+    width: 257px;
+    height: 37px;
+    margin: 65px auto 90px auto;
+    overflow: hidden;
+    text-indent: -9999px;
+  }
+}
+
+.thing-grid-box {
+  background-color: #fff;
+  min-height: 300px;
+  .thing__thumb {}
+  .thing__body {
+    padding: 1em;
+  }
+}
+
+#thing-show {
+  .thing-show__content {
+    img {
+      max-width: 100%;
+    }
+  }
+}

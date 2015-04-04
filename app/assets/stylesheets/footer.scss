@@ -1,0 +1,11 @@
+#bloc-footer {
+  background-color: #fffcec;
+
+  p.about {
+    background-image: image-url('footer/about.png');
+    width: 549px;
+    height: 195px;
+    text-indent: -9999px;
+    overflow: hidden;
+  }
+}
