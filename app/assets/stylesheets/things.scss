@@ -30,6 +30,17 @@
   }
 }
 
+#bloc-thing-new, #bloc-thing-edit {
+  .bloc-title {
+    background-image: image-url('things/title-suggest.png');
+    width: 286px;
+    height: 30px;
+    margin: 30px auto;
+    overflow: hidden;
+    text-indent: -9999px;
+  }
+}
+
 .thing-grid-box {
   background-color: #fff;
   min-height: 300px;
@@ -41,8 +52,15 @@
 
 #thing-show {
   .thing-show__content {
+    background-color: #fff;
+    color: #333;
+    padding: 1em;
+    font-size: 1.5em;
     img {
       max-width: 100%;
     }
+  }
+  .thing-show__deeds {
+    padding: 2em 0;
   }
 }

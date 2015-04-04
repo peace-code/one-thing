@@ -6,13 +6,12 @@
         %small= @thing.user.name
         - if user_signed_in? && @thing.user == current_user
           .pull-right
-            = link_to "edit", edit_thing_path, class: "btn btn-d"
-            = link_to "delete", thing_path, method: :delete, data: { confirm: "sure?" }, class: "btn btn-d"
+            = link_to "수정", edit_thing_path, class: "btn btn-d"
+            = link_to "삭제", thing_path, method: :delete, data: { confirm: "sure?" }, class: "btn btn-d"
 
     .thing-show__content= @thing.content.html_safe
 
     .thing-show__deeds.text-center
-      %hr
       %ul.list-inline
         - @thing.deeds.each do |deed|
           %li
@@ -24,6 +23,5 @@
         - else
           = link_to '함께 하겠습니다', new_deed_thing_path(@thing), method: :post, class: 'btn btn-xl btn-d'
 
-    %hr
     .comments
       = render @thing.comments
