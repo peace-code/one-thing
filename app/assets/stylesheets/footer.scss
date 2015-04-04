@@ -1,7 +1,24 @@
 #bloc-footer {
   background-color: #fffcec;
+  color: #442213;  
 
   p.about {
+    padding: 0px 20px;
+    width: 549px;
+    height: 120px;
+    max-width: 100%;
+    overflow: hidden;
+    align: left;
+    line-height:2.3em;
+  }
+
+  img {
+    max-width: 150px;
+    margin: 0 5px 0 0;
+    display:block;
+  }
+
+  p.about.old {
     background-image: image-url('footer/about.png');
     width: 549px;
     height: 195px;
