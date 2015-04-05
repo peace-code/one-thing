@@ -36,6 +36,7 @@ class ThingsController < ApplicationController
   end
 
   def edit
+    redirect_to @thing, notice: "you don't have permission yet." unless @thing.user == current_user
   end
 
   def update
