@@ -36,14 +36,15 @@
                 분 중에 한 분입니다
             - else
               = link_to '함께 하겠습니다', new_deed_thing_path(@thing), method: :post, class: 'btn-deed'
-          .thing-show__deeds__people
-            %ul.list-inline
-              - @thing.deeds.each do |deed|
-                %li
-                  - if current_user == deed.user
-                    %strong= deed.user.name
-                  - else
-                    = deed.user.name
+          - if @thing.deeds.present?
+            .thing-show__deeds__people
+              %ul.list-inline
+                - @thing.deeds.each do |deed|
+                  %li
+                    - if current_user == deed.user
+                      %strong= deed.user.name
+                    - else
+                      = deed.user.name
 
         .thing-show__share-box
           .fb-like{"data-action" => "like", "data-href" => thing_url(@thing), "data-layout" => "standard", "data-share" => "false", "data-show-faces" => "true"}
