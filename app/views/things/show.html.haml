@@ -1,27 +1,52 @@
-#thing-show.bloc.l-bloc
+- content_for :page_title, @thing.title
+= content_for :meta_tags_for_share do
+  = tag :meta, property: "og:type", content: "website"
+  = tag :meta, property: "og:url", content: thing_url(@thing)
+  = tag :meta, property: "og:title", content: "1thing.kr: #{@thing.title}"
+  = tag :meta, property: "og:image", content: featured_image_url(@thing)
+  = tag :meta, property: "og:description", content: excerpt(@thing.content).delete!("\n")
+  = tag :meta, property: "fb:app_id", content: '766015050152765'
+
+#bloc-thing-show.bloc.l-bloc
   .container.bloc-md
-    .page-header
-      %h2
-        = @thing.title
-        %small= @thing.user.name
-        - if user_signed_in? && @thing.user == current_user
-          .pull-right
-            = link_to "수정", edit_thing_path, class: "btn btn-d"
-            = link_to "삭제", thing_path, method: :delete, data: { confirm: "sure?" }, class: "btn btn-d"
+    .thing-show
+      .thing-show__meta
+        = image_tag(user_thumb(@thing.user))
+        %h2= @thing.title
+        %p
+          %span.thing-show__username= @thing.user.name
+          %span.thing-show__created= l @thing.created_at
+          - if user_signed_in? && @thing.user == current_user
+            = link_to "수정", edit_thing_path, class: "btn btn-default btn-xs"
+            = link_to "삭제", thing_path, method: :delete, data: { confirm: "sure?" }, class: "btn btn-default btn-xs"
 
-    .thing-show__content= @thing.content.html_safe
+      .thing-show__content
+        = @thing.content.html_safe
 
-    .thing-show__deeds.text-center
-      %ul.list-inline
-        - @thing.deeds.each do |deed|
-          %li
-            = deed.user.name
-      - if user_signed_in?
-        - deed = @thing.deeds.where(user: current_user).first
-        - if deed.present?
-          = "#{current_user.name}님은 참여를 약속한 #{@thing.deeds.count}분 중에 한 분입니다"
-        - else
-          = link_to '함께 하겠습니다', new_deed_thing_path(@thing), method: :post, class: 'btn btn-xl btn-d'
+        .thing-show__deeds
+          - if user_signed_in?
+            - deed = @thing.deeds.where(user: current_user).first
+            - if deed.present?
+              = link_to '함께 하겠습니다', new_deed_thing_path(@thing), method: :post, class: 'btn-deed active', onclick: "alert('이미 약속하셨습니다.');return false;"
+              %p.text-center
+                = "#{current_user.name}님은"
+                참여를 약속한
+                %strong
+                  = @thing.deeds.count
+                분 중에 한 분입니다
+            - else
+              = link_to '함께 하겠습니다', new_deed_thing_path(@thing), method: :post, class: 'btn-deed'
+          .thing-show__deeds__people
+            %ul.list-inline
+              - @thing.deeds.each do |deed|
+                %li
+                  - if current_user == deed.user
+                    %strong= deed.user.name
+                  - else
+                    = deed.user.name
 
-    .comments
-      = render @thing.comments
+        .thing-show__share-box
+          .fb-like{"data-action" => "like", "data-href" => thing_url(@thing), "data-layout" => "standard", "data-share" => "false", "data-show-faces" => "true"}
+
+        .thing-show__comments
+          .fb-comments{"data-colorscheme" => "light", "data-href" => thing_url(@thing), "data-numposts" => "5", "data-width" => "100%"}

@@ -1,14 +1,19 @@
 !!! 5
 
 %head
-  %meta{:charset => "utf-8"}/
-  %meta{:content => "", :name => "keywords"}/
-  %meta{:content => "", :name => "description"}/
+  %meta{:charset => "utf-8"}
+  %meta{:content => "1thing, 원씽, 제안, 세월호, 416", :name => "keywords"}
+  %meta{:content => "커다란 사건 앞에서 작은 힘이라도 보태고 싶지만 어떻게 해야 할지 막막한 마음을 그대로 담아 만들었습니다. 우리 모두를 어쩌면 무기력으로 몰아넣은 사건들이지만. 누군가가 작은 제안을 하고, 그 제안에 같은 마음을 가진 이들이 조금 반응한다면. 작은 반응들이 하나하나 쌓이면 더 큰 변화도 욕심낼 수 있지 않을까요. 1thing.kr은 그런 희망을 품어봅니다.", :name => "description"}
+  = yield :meta_tags_for_share
+
   %link{ rel: "shortcut icon", type: "image/png", href: asset_path("favicon.png") }
   = stylesheet_link_tag    'application', media: 'all'
   = javascript_include_tag 'application'
   = csrf_meta_tags
-  %title= "1 Thing!"
+
+  %title
+    = "1thing.kr"
+    = content_for?(:page_title) ? ' : ' + yield(:page_title) : ''
 %body
 
   .page-container

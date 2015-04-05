@@ -12,7 +12,7 @@
       %li= link_to "해볼래요?", things_path
       %li= link_to "이건 어때요?", new_thing_path
       - if user_signed_in?
-        %li= link_to "#{current_user.name} 로그아웃", destroy_user_session_path, method: :delete
+        %li= link_to "로그아웃", destroy_user_session_path, method: :delete
       - else
         %li= link_to '로그인', new_user_session_path
         %li= link_to '회원가입', new_user_registration_path
