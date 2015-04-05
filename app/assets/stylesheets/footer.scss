@@ -1,9 +1,9 @@
 #bloc-footer {
   background-color: #fffcec;
-  color: #442213;  
+  color: #442213;
 
   p.about {
-    padding: 0px 20px;
+    padding: 0px;
     width: 549px;
     height: 120px;
     max-width: 100%;
@@ -18,17 +18,26 @@
     display:block;
   }
 
-  p.about.old {
-    background-image: image-url('footer/about.png');
-    width: 549px;
-    height: 195px;
-    max-width: 100%;
+  a.btn-peacecode {
+    background-image: image-url('footer/btn-peacecode.png');
+    display: block;
+    width: 211px;
+    height: 39px;
     text-indent: -9999px;
-    overflow: hidden;
+    max-width: 100%;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain;
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: 780px) {
+    p.about {
+      width: 100%;
+    }
+    a.btn-peacecode {
+      margin: 1em auto;
+    }
   }
 }
