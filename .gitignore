@@ -26,4 +26,11 @@
 # Ignore ruby version
 .ruby-version
 
+# Ignore mac osx thing.
 .DS_Store
+
+# Ignore vagrant
+.vagrant
+
+# Ignore assets
+/public/assets/
