@@ -36,6 +36,8 @@
                 분 중에 한 분입니다
             - else
               = link_to '함께 하겠습니다', new_deed_thing_path(@thing), method: :post, class: 'btn-deed'
+          - else
+            = link_to '함께 하겠습니다', new_user_session_path, class: 'btn-deed', onclick: 'return confirm("로그인 하시면 사용할 수 있습니다. 로그인 하실꺼죠?");'
           - if @thing.deeds.present?
             .thing-show__deeds__people
               %ul.list-inline
