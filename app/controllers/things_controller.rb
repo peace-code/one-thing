@@ -1,6 +1,6 @@
 class ThingsController < ApplicationController
   before_action :find_thing, only: [:show, :edit, :update, :destory, :new_deed]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :seq]
 
   def index
     @things = Thing.all
@@ -13,6 +13,7 @@ class ThingsController < ApplicationController
 
   def seq
     @thing = Thing.where(seq: params[:seq]).first
+    render 'show', id: @thing.id
   end
 
   def new
