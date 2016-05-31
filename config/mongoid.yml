@@ -102,6 +102,6 @@ test:
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGOLAB'] %>
+      uri: <%= ENV['MONGODB_URL'] %>
       options:
         #consistency: :strong

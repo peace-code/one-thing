@@ -25,6 +25,7 @@
 
 # Ignore ruby version
 .ruby-version
+.rbenv-vars
 
 # Ignore mac osx thing.
 .DS_Store

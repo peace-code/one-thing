@@ -3,7 +3,7 @@ ruby '2.2.0'
 gem 'rails', '4.2.0'
 
 # Database
-gem 'mongoid'
+gem 'mongoid', '~> 4.0', '>= 4.0.2'
 gem 'sqlite3', group: :development
 gem 'pg', group: :deployment
 
@@ -52,4 +52,8 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
 #  gem 'spring'
+end
+
+group :production do
+  gem 'puma'
 end
