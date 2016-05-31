@@ -35,3 +35,10 @@
 
 # Ignore assets
 /public/assets/
+
+/shared/log/*
+!/shared/log/.keep
+/shared/pids/*
+!/shared/pids/.keep
+/shared/sockets/*
+!/shared/sockets/.keep
